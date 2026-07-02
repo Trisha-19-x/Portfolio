@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soumitrisha Dutta — Research Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --paper: #F7F5EF;
+  --paper-raised: #FBFAF6;
+  --ink: #1C1B19;
+  --ink-soft: #4A4742;
+  --ink-faint: #847E73;
+  --rule: #D9D4C7;
+  --rule-strong: #C2BCAC;
+  --navy: #2B3A55;
+  --navy-soft: #5A6B8C;
+  --rust: #8B4A3C;
+  --rust-soft: #B8836F;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--navy-soft); }
+a:hover{ color: var(--rust); border-color: var(--rust-soft); }
+
+.wrap{
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 600px){
+  .wrap{ padding: 0 20px; }
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead{
+  border-bottom: 1px solid var(--rule-strong);
+  padding: 56px 0 28px;
+}
+
+.masthead-top{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.masthead-kicker{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.name{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(36px, 6vw, 52px);
+  margin: 14px 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.role-line{
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+
+.contact-row{
+  margin-top: 20px;
+  display:flex;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.contact-row > *{ margin-right: 18px; margin-bottom: 6px; }
+
+.contact-row a{ border-bottom: 1px solid var(--rule-strong); color: var(--ink-soft); }
+.contact-row a:hover{ color: var(--rust); border-color: var(--rust-soft); }
+
+/* ---------- Statement ---------- */
+
+.statement{
+  padding: 36px 0 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.statement p{
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--ink);
+  max-width: 760px;
+  margin: 0 0 28px;
+}
+
+.statement p em{ font-style: italic; color: var(--navy); }
+
+/* ---------- Section scaffolding ---------- */
+
+section.entry{
+  padding: 64px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+section.entry:last-of-type{ border-bottom: none; }
+
+.entry-head{
+  display:flex;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.entry-num{ margin-right: 18px; }
+
+.entry-num{
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--rust);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.entry-title{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(24px, 3.2vw, 30px);
+  letter-spacing: -0.01em;
+}
+
+.entry-meta{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  margin: 8px 0 28px;
+  display:flex;
+  flex-wrap:wrap;
+  letter-spacing: 0.02em;
+}
+
+.entry-meta > span{ margin-right: 18px; margin-bottom: 6px; }
+
+.entry-meta span{ white-space: nowrap; }
+
+.entry-meta b{ color: var(--ink-soft); font-weight: 500; }
+
+.lede{
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 680px;
+  margin: 0 0 32px;
+}
+
+/* ---------- Figures ---------- */
+
+figure{ margin: 0 0 36px; }
+
+figure.full{ margin: 40px 0 36px; }
+
+.fig-pair{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 40px 0 36px;
+}
+
+@media (max-width: 700px){
+  .fig-pair{ grid-template-columns: 1fr; }
+}
+
+.fig-frame{
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  padding: 18px;
+  border-radius: 2px;
+}
+
+.fig-frame img{ border-radius: 1px; }
+
+figcaption{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+figcaption b{ color: var(--ink-soft); font-weight: 500; }
+
+/* ---------- Body content blocks ---------- */
+
+.subhead{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 19px;
+  margin: 36px 0 14px;
+  color: var(--ink);
+}
+
+.body-text{
+  max-width: 700px;
+  color: var(--ink-soft);
+  font-size: 15.5px;
+}
+
+.body-text p{ margin: 0 0 16px; }
+
+.body-text strong{ color: var(--ink); font-weight: 600; }
+
+/* design concept cards within an entry */
+
+.concept-list{
+  margin: 28px 0;
+}
+
+.concept{
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 22px;
+  padding-bottom: 4px;
+  margin-bottom: 36px;
+}
+
+.concept-label{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 6px;
+}
+
+.concept h4{
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.concept p{
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  max-width: 640px;
+}
+
+.spec-row{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  display:flex;
+  flex-wrap:wrap;
+  margin-top: 8px;
+}
+
+.spec-row > span{ margin-right: 16px; margin-bottom: 4px; }
+
+.spec-row b{ color: var(--navy); font-weight: 500; }
+
+/* tables for truth tables / specs */
+
+.data-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 13px;
+  margin: 18px 0 30px;
+}
+
+.data-table th, .data-table td{
+  border: 1px solid var(--rule-strong);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.data-table th{
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.data-table td{ color: var(--ink-soft); }
+
+/* achievement / pull-quote strip */
+
+.pull-strip{
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--navy);
+  padding: 18px 24px;
+  margin: 32px 0;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+
+.pull-strip b{ color: var(--navy); font-weight: 600; }
+
+/* references / lit grounding */
+
+.refs{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  margin-top: 24px;
+  line-height: 1.7;
+}
+
+.refs .refs-label{
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+/* ---------- Other research / education / skills section ---------- */
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+@media (max-width: 700px){
+  .grid-2{ grid-template-columns: 1fr; gap: 32px; }
+}
+
+.skill-group{ margin-bottom: 22px; }
+
+.skill-group-label{
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rust);
+  margin-bottom: 8px;
+}
+
+.skill-list{ font-size: 14.5px; color: var(--ink-soft); }
+.skill-list span{ display:block; padding: 3px 0; }
+
+.timeline-item{
+  display:flex;
+  margin-bottom: 18px;
+  font-size: 14.5px;
+}
+
+.timeline-date{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  padding-top: 2px;
+  min-width: 108px;
+  margin-right: 16px;
+}
+
+.timeline-content b{ color: var(--ink); font-weight: 600; display:block; margin-bottom: 2px;}
+.timeline-content span{ color: var(--ink-soft); }
+
+/* ---------- Footer ---------- */
+
+footer{
+  padding: 48px 0 64px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* nav */
+
+.toc{
+  position: sticky;
+  top: 0;
+  background: rgba(247,245,239,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+  z-index: 10;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.toc-inner{
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 32px;
+  display:flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.toc-inner a{ margin-right: 22px; }
+.toc-inner a:last-child{ margin-right: 0; }
+
+@media (max-width: 600px){
+  .toc-inner{ padding: 12px 20px; }
+}
+
+.toc a{
+  color: var(--ink-faint);
+  border-bottom: none;
+  letter-spacing: 0.02em;
+}
+.toc a:hover{ color: var(--rust); }
+
+</style>
+</head>
+<body>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#statement">Statement</a>
+    <a href="#iitg">Ultrasound Gripper · IITG</a>
+    <a href="#robocon">Robocon 2025</a>
+    <a href="#washing-machine">Manual Washing Machine</a>
+    <a href="#cnc">CNC Plotter</a>
+    <a href="#background">Background</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="masthead-kicker">Research Portfolio — Mechanical Engineering</div>
+    </div>
+    <h1 class="name">Soumitrisha Dutta</h1>
+    <p class="role-line">Mechanical Engineering undergraduate, National Institute of Technology Durgapur — working on robotic manipulation, mechatronic system design, and assistive technologies for healthcare.</p>
+    <div class="contact-row">
+      <a href="mailto:soumitrishadutta19@gmail.com">soumitrishadutta19@gmail.com</a>
+      <a href="https://www.linkedin.com/in/soumitrisha-dutta-2a74a4218" target="_blank" rel="noopener">linkedin.com/in/soumitrisha-dutta</a>
+      <span>Kolkata, India</span>
+    </div>
+  </header>
+
+  <section class="statement" id="statement">
+    <p>I work on the mechanical design of systems that have to adapt to the irregular, unstandardized demands of the real world — ultrasound probes of varying geometry, a basketball in motion, a laundry drum turned by a pedal instead of a motor. My approach treats <em>mechanism design as the first control problem</em>: before a system can be made intelligent, efficient, or accessible, it has to be made physically capable of holding, transmitting force, and responding to what it touches. The work below spans that approach across domains — <em>medical robotics</em>, <em>competitive robotics</em>, <em>sustainable design</em>, and a handful of self-directed builds — each one starting from an underspecified mechanical problem and carried through to a physical solution.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PROJECT 1: IITG ULTRASOUND GRIPPER -->
+  <!-- ============================================================ -->
+
+  <section class="entry" id="iitg">
+    <div class="entry-head">
+      <span class="entry-num">01</span>
+      <h2 class="entry-title">Adaptive Probe-Holding Mechanisms for a Teleoperated Ultrasound Robot</h2>
+    </div>
+    <div class="entry-meta">
+      <span><b>Host:</b> Indian Institute of Technology Guwahati</span>
+      <span><b>Supervisor:</b> Dr. Santosha Kumar Dwivedy, Dept. of Mechanical Engineering</span>
+      <span><b>Duration:</b> May – July 2025</span>
+      <span><b>Tools:</b> SolidWorks, SolidWorks Simulation (FEA)</span>
+    </div>
+
+    <p class="lede">Robotic ultrasound systems can extend expert diagnostic reach into regions with no resident sonographer — but every existing platform is built around a single, fixed probe geometry. This project designed and evaluated three original gripper mechanisms intended to hold <em>any</em> common ultrasound probe — linear, curvilinear, phased-array, or pencil — securely, compliantly, and without manual reconfiguration.</p>
+
+    <div class="fig-pair">
+      <div class="fig-frame">
+        <img src="assets/design1_jamming_gripper_open.png" alt="Granular jamming gripper, open configuration">
+        <figcaption><b>Fig. 1 —</b> Design 1, jaws open. Rack-and-pinion actuated, granular-jamming contact pads visible on the inner plate faces.</figcaption>
+      </div>
+      <div class="fig-frame">
+        <img src="assets/design1_jamming_gripper_closed.png" alt="Granular jamming gripper, closed configuration">
+        <figcaption><b>Fig. 2 —</b> Design 1, viewed from the drive side. Twin DC motors drive the central pinion gear.</figcaption>
+      </div>
+    </div>
+
+    <div class="subhead">The design problem</div>
+    <div class="body-text">
+      <p>Ultrasound probes are not standardized: a linear array probe and a phased-array cardiac probe can differ in footprint by a factor of two, and pencil probes for Doppler work are a different geometric class entirely. A gripper built for one probe type fails on the next — which is precisely why most existing robotic ultrasound platforms (ARTIS, TER, the Abolmaesumi parallelogram-linkage system) are deployed with form-fitting, probe-specific holders rather than general-purpose grippers. The open problem was: <strong>can a single mechanism grip across this entire geometric range, while staying compliant enough not to damage the probe or the patient?</strong></p>
+      <p>I addressed this by developing three independent design concepts, each trading off adaptability, mechanical simplicity, and contact conformity differently — then evaluating their structural response under a representative clinical loading condition.</p>
+    </div>
+
+    <div class="concept-list">
+
+      <div class="concept">
+        <div class="concept-label">Design 1</div>
+        <h4>Rack-and-pinion gripper with granular jamming contact</h4>
+        <p>Two steel plates, each on a 30&nbsp;mm-stroke linear rack, are driven symmetrically inward or outward by a shared pinion gear — giving a clamping range of up to 60&nbsp;mm. Each plate face carries a sealed elastomeric pouch filled with granular medium. In its unjammed state the pouch drapes over the probe's contours; on application of vacuum, the granules lock rigid, capturing a custom-conformed grip with no probe-specific tooling.</p>
+        <div class="spec-row">
+          <span><b>Stroke:</b> 30 mm/rack</span>
+          <span><b>Max separation:</b> 60 mm</span>
+          <span><b>Actuation:</b> servo/stepper-driven pinion</span>
+          <span><b>Vacuum source:</b> ~70 kPa diaphragm micro-pump</span>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-label">Design 2</div>
+        <h4>Ball-screw plate clamp with lateral conformal linkage</h4>
+        <p>A fixed plate and a ball-screw-actuated movable plate form the primary clamp (M14×2.0 thread, 70&nbsp;mm travel) — chosen for high positional accuracy and minimal backlash over the rack-and-pinion approach. A second, independent mechanism then closes in laterally: a servo-driven circular link rotates to pull two side plates inward through curved guide slots, providing anti-rotation support for round or tapered probes. Spring-loaded 10&nbsp;mm extensions on the side plates let the same mechanism passively adapt to both slim pencil probes and broader curvilinear ones.</p>
+        <div class="spec-row">
+          <span><b>Screw:</b> 10 mm bore, M14×2.0</span>
+          <span><b>Travel:</b> 70 mm</span>
+          <span><b>Side-plate gearing:</b> 1:1, spatially offset</span>
+          <span><b>Contact surface:</b> soft gel pad lining</span>
+        </div>
+      </div>
+
+      <div class="fig-pair">
+        <div class="fig-frame">
+          <img src="assets/design2_geartrain_cutaway.png" alt="Ball screw and gear train cutaway view">
+          <figcaption><b>Fig. 3 —</b> Cutaway of the ball-screw drive train: motor-to-screw gear pair (1:1) shown in transparency.</figcaption>
+        </div>
+        <div class="fig-frame">
+          <img src="assets/design2_sidegrip_linkage.png" alt="Secondary side-gripping linkage detail">
+          <figcaption><b>Fig. 4 —</b> Secondary side-gripping linkage. The central disc rotates to translate two curved links, drawing side plates inward for anti-rotation support.</figcaption>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-label">Design 3</div>
+        <h4>Pneumatic pin-array gripper with independent compliant contact</h4>
+        <p>A derivative of Design 1's rack-and-pinion actuation, with the granular jamming pads replaced by a 12-cylinder pneumatic pin array on each plate (8&nbsp;mm bore, 25&nbsp;mm stroke). Each rubber-tipped piston extends independently until it contacts the probe surface, then holds its equilibrium position under backpressure — so the array as a whole settles into a unique, conformal cavity around whatever geometry it meets, similar in principle to a pin-art toy but with controlled, individually-addressable force. Increasing the rack length to 50&nbsp;mm (from 30&nbsp;mm in Design 1) gave the working envelope needed to fit the pneumatic hardware internally while still reaching a 100&nbsp;mm maximum plate separation.</p>
+        <div class="spec-row">
+          <span><b>Pin array:</b> 12 cylinders/plate</span>
+          <span><b>Cylinder bore/stroke:</b> 8 mm / 25 mm</span>
+          <span><b>Max plate separation:</b> 100 mm</span>
+          <span><b>Control:</b> solenoid-valved, individually addressable</span>
+        </div>
+      </div>
+
+      <div class="fig-pair">
+        <div class="fig-frame">
+          <img src="assets/design3_pinarray_open.png" alt="Pneumatic pin array gripper, full assembly">
+          <figcaption><b>Fig. 5 —</b> Design 3 full assembly — two 12-pin arrays mounted on the rack-and-pinion base.</figcaption>
+        </div>
+        <div class="fig-frame">
+          <img src="assets/pneumatic_cylinder_reference.png" alt="Single pneumatic cylinder reference model">
+          <figcaption><b>Fig. 6 —</b> Single double-acting pneumatic cylinder, modeled for reference, showing piston travel and tubing ports.</figcaption>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="subhead">Structural validation</div>
+    <div class="body-text">
+      <p>To check whether the gripper structures could resist slippage under realistic loading, I ran a preliminary static finite-element analysis in SolidWorks Simulation. A simplified probe geometry — sized to match convex and phased-array dimensions — was placed in bonded contact with the gripping interfaces, with the gripper base fixed to represent attachment to a robotic arm. An <strong>8&nbsp;N downward force</strong>, representing typical clinical scanning contact pressure, was applied to the probe's underside, and reaction forces and deformation were probed across the contact and support regions.</p>
+      <p>This was an initial validation pass rather than a finished one — the report is explicit that further force-transmission and deformation analysis is needed before any design could move to prototyping. I see that as the honest state of the work: three structurally distinct, individually reasoned design concepts, with the first round of quantitative load evidence in hand and a clear next step defined.</p>
+    </div>
+
+    <div class="refs">
+      <div class="refs-label">Positioned against</div>
+      Vilchis et al. (2003), ESA ARTIS teleoperated tele-echography platform · Lefort et al. (2014), TER cable-driven tele-ultrasound robot · Abolmaesumi et al. (2002), 4-DOF parallelogram-linkage robot-assisted ultrasound · Wong et al. (2019), soft fluid-actuated extracorporeal end-effector · Xu et al. (2024), modular UR5e probe-switching platform · Ali et al. (2020), bespoke extracorporeal ultrasound manipulator
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PROJECT 2: DD ROBOCON 2025 -->
+  <!-- ============================================================ -->
+
+  <section class="entry" id="robocon">
+    <div class="entry-head">
+      <span class="entry-num">02</span>
+      <h2 class="entry-title">Semi-Autonomous Basketball-Playing Robot — DD Robocon 2025</h2>
+    </div>
+    <div class="entry-meta">
+      <span><b>Team:</b> Team Pegasus, NIT Durgapur</span>
+      <span><b>Competition:</b> DD Robocon 2025 — "Robot Basketball," Ulaanbaatar</span>
+      <span><b>Result:</b> 97/100, Stage 1 — highest score among all participating IITs and NITs</span>
+      <span><b>Tools:</b> Fusion 360, pneumatics, image processing</span>
+    </div>
+
+    <p class="lede">DD Robocon 2025's brief was a basketball-playing robot: pick up a ball, dribble it, pass to a teammate, shoot into a hoop, jump, and defend — all under semi-autonomous control. I worked on the mechanical design of <strong>R1 and R2</strong>, the team's two bots, covering the chassis, gripping, jumping, and shooting subsystems, alongside the pneumatic and motor-control logic that drives them.</p>
+
+    <div class="fig-pair">
+      <div class="fig-frame">
+        <img src="assets/bot_hero_closed.jpg" alt="Full robot CAD assembly, gripper extended">
+        <figcaption><b>Fig. 7 —</b> Full bot assembly (Fusion 360) — funnel-shaped ball receiver, dual side gripper, omni-wheel drive base.</figcaption>
+      </div>
+      <div class="fig-frame">
+        <img src="assets/bot_hero_open.jpg" alt="Full robot CAD assembly, gripper retracted">
+        <figcaption><b>Fig. 8 —</b> Same assembly, gripper retracted — net frame and rear support legs visible.</figcaption>
+      </div>
+    </div>
+
+    <div class="subhead">Drivetrain &amp; chassis</div>
+    <div class="body-text">
+      <p>The chassis is a circular frame built from T-slotted 4040 aluminium extrusion — bolted rather than welded, which kept the structure modular through several rounds of mid-competition redesign. Four omni-wheels in a 45° cross configuration give full holonomic control: the bot can translate in a straight line from a standstill with no preliminary rotation, and combine translation with rotation for fine orientation against the hoop. Motor selection followed directly from the numbers: at an estimated 40&nbsp;kg robot weight and 0.65–0.75 traction coefficient on a plyboard surface, the four-wheel configuration generates a resultant torque of roughly <strong>2.81–2.83× single-motor torque</strong> — which sized the drive motor to an HD planetary DC unit rated 468&nbsp;rpm, 24&nbsp;V, 72.6&nbsp;N·cm.</p>
+    </div>
+
+    <div class="subhead">Gripping &amp; ball handling</div>
+    <div class="body-text">
+      <p>A front-mounted fabric basket — chosen specifically to absorb the ball's momentum and prevent bounce-out — receives the ball and positions it between a two-part pneumatic gripper. The gripper rides a motor-driven belt for vertical travel, so the same mechanism that closes around the ball can also lift it into position for dribbling or hand-off to the shooting subsystem. Actuation logic is governed by a 5/3-way solenoid valve: with solenoids A and B independently switched, the system can extend, retract, or <em>hold position against external force</em> when both are off — which matters for dribbling, where the gripper needs to resist disturbance between beats without continuous power draw.</p>
+    </div>
+
+    <div class="fig-pair">
+      <div class="fig-frame">
+        <img src="assets/pneumatic_valve_diagram.jpg" alt="5/3 way solenoid valve schematic">
+        <figcaption><b>Fig. 9 —</b> 5/3-way solenoid valve schematic governing the pneumatic gripper and cylinder actuation.</figcaption>
+      </div>
+      <div class="fig-frame">
+        <img src="assets/truth_tables_combined.png" alt="Gripper and motor truth tables">
+        <figcaption><b>Fig. 10 —</b> Logic tables: pneumatic cylinder output → gripper state (left); motor direction → vertical travel (right).</figcaption>
+      </div>
+    </div>
+
+    <div class="subhead">Shooting &amp; passing</div>
+    <div class="body-text">
+      <p>The shooting mechanism is a hollow cylindrical housing, sized to the ball's diameter, with two motor-driven discs mounted transversely inside. The gripper deposits the ball onto a conveyor belt feeding this housing; as the ball rolls through, the discs impart tangential force to launch it, while a pneumatic actuator under the whole assembly adjusts the projection angle. Shoot and pass are semi-automatic: on command, an image-processing pipeline — Gaussian blur, HSV color-space conversion, Canny edge detection — locates the hoop via Hough-circle and color masking, estimates range from a LiDAR depth map, and computes launch angle from a physics-based trajectory model before the motors execute.</p>
+    </div>
+
+    <div class="fig-pair">
+      <div class="fig-frame">
+        <img src="assets/shooting_mechanism_cad.jpg" alt="Shooting mechanism CAD render">
+        <figcaption><b>Fig. 11 —</b> Shooting mechanism — dual transverse discs inside the launch cylinder, stepper-driven.</figcaption>
+      </div>
+      <div class="fig-frame">
+        <img src="assets/ip_control_flowchart.jpg" alt="Image processing control flowchart for shoot/pass logic">
+        <figcaption><b>Fig. 12 —</b> Shoot/pass decision logic — opponent-blocking detection branches into lob or direct trajectory.</figcaption>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead><tr><th>Distance (m)</th><th>Velocity (m/s)</th><th>Launch angle (°)</th></tr></thead>
+      <tbody>
+        <tr><td>1.0</td><td>10.00</td><td>52</td></tr>
+        <tr><td>5.0</td><td>13.62</td><td>31</td></tr>
+        <tr><td>10.0</td><td>16.51</td><td>30</td></tr>
+        <tr><td>15.0</td><td>20.13</td><td>28</td></tr>
+        <tr><td>20.0</td><td>23.02</td><td>26</td></tr>
+        <tr><td>29.0</td><td>30.00</td><td>22</td></tr>
+      </tbody>
+    </table>
+    <p class="body-text" style="font-size:13px; color:var(--ink-faint); margin-top:-20px;">Sample rows from the physics-model output sheet (29 computed rows total) mapping required launch velocity and angle against shot distance — the table the shoot algorithm references at runtime.</p>
+
+    <div class="subhead">Jumping mechanism</div>
+    <div class="body-text">
+      <p>Jumping while shooting was an explicit task requirement. The mechanism stores energy in a motor-compressed spring barrel, then releases it through a four-legged impact plate; on landing, the single-jointed legs fold to absorb shock before re-expanding to propel the bot upward again. It's a fully mechanical energy-storage solution rather than a higher-power-draw alternative — a deliberate trade given the bot's already-distributed 24V power budget across six motor groups.</p>
+    </div>
+
+    <div class="fig-pair">
+      <div class="fig-frame">
+        <img src="assets/jumping_mechanism_cad.jpg" alt="Jumping mechanism CAD render">
+        <figcaption><b>Fig. 13 —</b> Spring-barrel jump mechanism, compressed state — twin motors drive the compression shaft.</figcaption>
+      </div>
+      <div class="fig-frame">
+        <img src="assets/jump_legs_cad.jpg" alt="Folding leg mechanism CAD render">
+        <figcaption><b>Fig. 14 —</b> Four-legged impact plate, rubber-bushed feet for shock absorption on landing.</figcaption>
+      </div>
+    </div>
+
+    <div class="subhead">Control architecture &amp; power</div>
+    <div class="body-text">
+      <p>Sensor input (camera, proximity, pressure, encoders, IMU) feeds a decision-making layer — path planning, jump decision, ball localization, task selection — which drives the actuation layer across five independently controlled subsystems. Power is distributed from a single 24V battery through dedicated DC-DC converters and per-subsystem motor drivers, with an emergency stop wired to cut power directly rather than through software, which was a deliberate safety-first call given the pneumatic and high-torque jump subsystems involved.</p>
+    </div>
+
+    <div class="fig-pair">
+      <div class="fig-frame">
+        <img src="assets/control_architecture.jpg" alt="Sensor to actuation control architecture diagram">
+        <figcaption><b>Fig. 15 —</b> Sensor input → decision layer → actuation layer control architecture.</figcaption>
+      </div>
+      <div class="fig-frame">
+        <img src="assets/voltage_distribution.png" alt="24V power and voltage distribution diagram">
+        <figcaption><b>Fig. 16 —</b> 24V power distribution across jump, motion, gripping, conveyor, and shooting subsystems.</figcaption>
+      </div>
+    </div>
+
+    <div class="pull-strip">
+      <b>97/100</b> in Stage 1 of DD Robocon 2025 — the highest score recorded among all participating IITs and NITs. Bot dimensions: 1480&nbsp;mm × 80&nbsp;mm (extending to 2000&nbsp;mm × 120&nbsp;mm); estimated weight 40&nbsp;kg.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PROJECT 3: MANUAL WASHING MACHINE (AAKRUTI 2024) -->
+  <!-- ============================================================ -->
+
+  <section class="entry" id="washing-machine">
+    <div class="entry-head">
+      <span class="entry-num">03</span>
+      <h2 class="entry-title">Pedal-Powered Manual Washing Machine — AAKRUTI 2024</h2>
+    </div>
+    <div class="entry-meta">
+      <span><b>Team:</b> Robocell, NIT Durgapur</span>
+      <span><b>Theme:</b> AAKRUTI 2024 — Sustainable Design</span>
+      <span><b>Status:</b> Preliminary concept design (CAD &amp; mechanism only)</span>
+      <span><b>Tools:</b> SolidWorks</span>
+    </div>
+
+    <p class="lede">In India, an estimated 5&nbsp;million people — disproportionately women — earn their livelihood through manual laundry work, and many more do it unpaid as daily domestic labour. Powered washing machines exist, but the cost and electricity dependence put them out of reach for exactly the households that would benefit most. For AAKRUTI 2024's sustainability theme, I worked on a concept for a fully human-powered washing machine that removes electricity from the equation entirely, while still mechanizing the punishing part of the task — the agitation.</p>
+
+    <div class="fig-pair">
+      <div class="fig-frame">
+        <img src="assets/washing_machine_v2.jpg" alt="Pedal-powered washing machine full CAD assembly">
+        <figcaption><b>Fig. 17 —</b> Full assembly (SolidWorks) — hopper-fed drum, gear train, and pedal-chair unit on a common base.</figcaption>
+      </div>
+      <div class="fig-frame">
+        <img src="assets/washing_machine_v1.jpg" alt="Pedal-powered washing machine, alternate angle showing gear train">
+        <figcaption><b>Fig. 18 —</b> Alternate angle, showing the belt-and-gear transmission between the pedal crank and the drum shaft.</figcaption>
+      </div>
+    </div>
+
+    <div class="subhead">Concept</div>
+    <div class="body-text">
+      <p>The design centers on a perforated rotating drum — loaded with clothes and water from an overhead storage tank — connected through a pulley-and-belt drive to a gear train, which is in turn driven by a pedal mechanism. The user sits on an adjustable, ergonomic chair (visible front-right in the assembly) and pedals; that rotational input is stepped through the gear train and transmitted via belt to rotate the drum, agitating the clothes inside exactly as a powered drum washer would, but with human effort replacing the motor entirely.</p>
+      <p>The water tank feeds directly into the drum housing, so the same pedalling action that drives agitation also keeps the wash cycle self-contained — no separate fill-and-drain step requiring electricity or plumbing. The ergonomic, adjustable seating was a deliberate choice: the task this design targets is currently done standing or crouched for hours, so converting it to a seated, geared task is itself a meaningful reduction in physical strain, independent of any speed advantage.</p>
+      <p>This was developed and presented as a preliminary concept design — the gear ratios and shaft sizing visible in the model (the assembly tree references multiple spur gears and stepped shaft diameters) were sized by hand for a working proof-of-concept, but I don't have the full torque and load calculations from this stage on hand to present here. I'm noting that gap directly rather than overstating the design's current state: it demonstrates the mechanism and the reasoning behind it clearly, but it hasn't yet gone through the same structural validation pass as the ultrasound gripper project above.</p>
+    </div>
+
+    <div class="pull-strip">
+      Designed against a real constraint, not a hypothetical one: <b>~5 million people in India</b> derive their livelihood from manual laundry work, with many more performing it as unpaid domestic labour — the target user for this design explicitly excludes anyone who could already afford a powered washing machine.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CNC PLOTTER (light treatment) -->
+  <!-- ============================================================ -->
+
+  <section class="entry" id="cnc">
+    <div class="entry-head">
+      <span class="entry-num">04</span>
+      <h2 class="entry-title">Mini CNC Plotter</h2>
+    </div>
+    <div class="entry-meta">
+      <span><b>Type:</b> Independent build</span>
+      <span><b>Tools:</b> Arduino, G-code, repurposed DVD-drive mechanisms</span>
+    </div>
+    <p class="lede" style="margin-bottom:8px;">A low-cost CNC plotting machine built around repurposed DVD-drive linear mechanisms for the X/Y stages, controlled by an Arduino running G-code-interpreted motion commands. Demonstrated precise positioning via stepper-motor actuation for automated drawing — a small, self-directed project in the same vein as the larger work above: taking an underspecified mechanical problem (precise 2D motion control on a near-zero budget) and finding a working solution from first principles.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- BACKGROUND -->
+  <!-- ============================================================ -->
+
+  <section class="entry" id="background" style="padding-bottom: 80px;">
+    <div class="entry-head">
+      <span class="entry-num">—</span>
+      <h2 class="entry-title">Background</h2>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="subhead" style="margin-top:0;">Education &amp; experience</div>
+        <div class="timeline-item">
+          <div class="timeline-date">2023 – 2027</div>
+          <div class="timeline-content"><b>B.Tech, Mechanical Engineering</b><span>National Institute of Technology Durgapur</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Jun 2026 –</div>
+          <div class="timeline-content"><b>Mechanical Research Intern</b><span>Plumule Research Pvt. Ltd. — IoT condition monitoring for plummer block bearings; vibration/temperature sensor placement via stress analysis</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">May – Jul 2025</div>
+          <div class="timeline-content"><b>Summer Research Intern</b><span>Indian Institute of Technology Guwahati — see Project 01 above</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 2024 –</div>
+          <div class="timeline-content"><b>Senior Member, Robocell</b><span>Centre for Cognitive Activities, NIT Durgapur — DD Robocon 2025, AAKRUTI 2024</span></div>
+        </div>
+
+        <div class="subhead">Other achievements</div>
+        <div class="body-text" style="font-size:14.5px;">
+          <p>Top 5%ile nationally in JEE Mains and WBJEE.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="subhead" style="margin-top:0;">Technical skills</div>
+        <div class="skill-group">
+          <div class="skill-group-label">CAD &amp; Mechanical Design</div>
+          <div class="skill-list">
+            <span>SolidWorks · Autodesk Fusion 360</span>
+            <span>Mechanism development &amp; assembly design</span>
+            <span>Structural &amp; static analysis (FEA)</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Robotics &amp; Embedded Systems</div>
+          <div class="skill-list">
+            <span>Sensor integration · Arduino</span>
+            <span>Embedded system prototyping</span>
+            <span>Pneumatic &amp; solenoid actuation logic</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Programming</div>
+          <div class="skill-list">
+            <span>Arduino IDE · Java</span>
+            <span>Python (basic) · MATLAB (basic)</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Relevant coursework</div>
+          <div class="skill-list">
+            <span>Theory of Machines · Machine Design</span>
+            <span>Kinematics &amp; Dynamics of Machines</span>
+            <span>Robotics &amp; Automation · AI/ML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Soumitrisha Dutta — Research Portfolio</span>
+    <span>Last updated June 2026</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
